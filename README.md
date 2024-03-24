@@ -1,7 +1,10 @@
 # sisop-nomor-4
+
 Dikerjakan oleh Raditya Hardian Santoso (5027231033)
+
 Dalam soal ini, kita diminta untuk membuat program yang memonitor ram dan size directory /home/{user} dengan cara memasukkan metrics kedalam file log secara periodik.
 minute_log.sh
+
 #!/bin/bash
 
 # Navigasi ke direktori log
