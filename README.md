@@ -39,6 +39,7 @@ chmod 600 "$logfile"
 ```
 Script bash yang pertama (minute_log.sh) akan memasukkan metrics ke dalam file dengan format metrics_{YmdHms}.log setiap menitnya. Script ini juga akan membuat folder dalam directory log dengan format metrics_agg_$(YmdH) dengan nilai H merupakan 1 jam sebelum script dijalankan. Tujuannya agar file log yang digenerate tiap menit tidak berceceran. hasil run:
 
+![alt text](https://cdn.discordapp.com/attachments/1176233896292122634/1221504545960755250/image.png?ex=6612d1c2&is=66005cc2&hm=a610467e45968273627aa85c3b476968f1c8b04ce8b2cd0e9b107fd7cf9996f6&)
 
 Karena minute_log.sh harus dijalankan tiap menit, kita dapat menambahkan line berikut pada crontab (crontab -e):
 ```bash
@@ -91,6 +92,9 @@ Untuk mendapatkan nilai average, kita dapat mencatat index, yaitu jumlah file lo
 Selanjutnya, untuk mendapat nilai minimum dan maximum kita dapat menyimpan masing-masing value metrics ke dalam array lalu melakukan sort sehingga nilai minimum masing-masing metrics akan berada pada index paling awal dan nilai maximum masing-masing metrics akan berada pada index paling akhir. Kita juga akan menggunakan chown agar log hanya dapat dibaca user.
 
 hasil run:
+
+![alt text](https://cdn.discordapp.com/attachments/1176233896292122634/1221504764857028608/image.png?ex=6612d1f6&is=66005cf6&hm=ca3e8774192fa09367ce9ed864cf1756ccffc99fc2c3adb462e53d329592f91b&)
+
 
 Agar aggregate_minutes_to_hourly_log.sh dapat dijalankan tiap jam, kita dapat menambahkan line berikut pada crontab:
 
