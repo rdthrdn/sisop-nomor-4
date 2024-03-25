@@ -46,6 +46,11 @@ Karena minute_log.sh harus dijalankan tiap menit, kita dapat menambahkan line be
 * * * * * /{path minute_log.sh}
 ```
 
+Cara melihat hasil : 
+```bash
+tail -n 10 $(ls -t /home/kali/log/metrics_*.log | head -n 1)
+```
+
 ## aggregate_minutes_to_hourly_log.sh
 
 Skrip ini menggabungkan file log per menit menjadi ringkasan per jam, menghitung nilai minimum, maksimum, dan rata-rata untuk setiap metrik.
@@ -102,3 +107,7 @@ Agar aggregate_minutes_to_hourly_log.sh dapat dijalankan tiap jam, kita dapat me
 0 * * * * /{path aggregate_minutes_to_hourly_log.sh}
 ```
 
+Cara melihat hasil : 
+```bash
+tail -n 10 $(ls -t /home/kali/log/metrics_agg*.log | head -n 1)
+```
